@@ -1,0 +1,338 @@
+#main-toolbar #activity-button {
+  background-image: url(../activity/tota-logo.svg);
+}
+
+#canvas {
+	width: 1200px;
+	height: 845px;
+	background-color: #77f442;
+}
+
+.hidden {
+  display: none;
+}
+
+#opening {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/opening.png);
+}
+
+#menu_custom {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/menu_custom.png);
+}
+
+#menu {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/menu.png);
+}
+
+#menu_explorar {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/menu_explorar.png);
+}
+
+#menu_jugar {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/menu_jugar.png);
+}
+
+#emprendedores {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/emprendedores.png);
+}
+
+#tips {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/tips.png);
+}
+
+#pasos {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/pasos.png);
+}
+
+#conocedor {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/conocedor.png);
+}
+
+#pensador {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/pensador.png);
+}
+
+#emprendedor {
+  width: 1200px;
+  height: 845px;
+  background-image: url(../img/emprendedor.png);
+}
+
+/*Modal*/
+#modal {
+  z-index: 998;
+  position: absolute;
+  top: 0px;
+  width: 1200px;
+  height: 845px;
+  background-color: black;
+  opacity: 0.7;
+}
+#modal_content {
+  z-index: 999;
+  position: absolute;
+  border: 8px solid #2E9AFE;
+  border-radius: 40px;
+
+  background-color: white;
+  top: 40px;
+  left: 43px;
+  width: 1100px;
+  height: 750px;
+}
+#modal_content_step {
+  z-index: 999;
+  position: absolute;
+  border: 8px solid #2E9AFE;
+  border-radius: 40px;
+
+  background-color: white;
+  top: 150px;
+  left: 240px;
+  width: 700px;
+  height: 500px;
+}
+.close_modal {
+  position: absolute;
+  background-image: url(../img/close-modal.png);
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  border: none;
+  border-radius: 30px;
+  right: 5px;
+  top: 5px;
+}
+.close_modal:hover {
+  background-image: url(../img/close-modal-hover.png);
+}
+
+/*Emprendedores*/
+#img_emprendedores {
+  position: absolute;
+  background-color: black;
+  left: 100px;
+  top: 200px;
+  width: 250px;
+  height: 300px;
+}
+#content_emprendedores {
+  position: absolute;
+  background-color: white;
+  left: 450px;
+  top: 100px;
+  width: 650px;
+  height: 550px;
+}
+#name_emprendedores {
+  position: absolute;
+  background-color: gray;
+  width: 100%;
+  height: 70px;
+}
+#history_emprendedores {
+  position: absolute;
+  background-color: gray;
+  top: 100px;
+  width: 100%;
+  height: 450px;
+}
+
+/*Tips*/
+#img_tips {
+  position: absolute;
+  background-color: black;
+  left: 700px;
+  top: 200px;
+  width: 400px;
+  height: 300px;
+}
+#content_tips {
+  position: absolute;
+  background-color: white;
+  left: 50px;
+  top: 150px;
+  width: 600px;
+  height: 450px;
+}
+#sentence_tips {
+  position: absolute;
+  background-color: gray;
+  width: 100%;
+  height: 70px;
+}
+#detail_tips {
+  position: absolute;
+  background-color: gray;
+  top: 100px;
+  width: 100%;
+  height: 350px;
+}
+
+/*Pasos*/
+#content_pasos {
+  position: absolute;
+  background-color: white;
+  border-radius: 250px;
+  left: 350px;
+  top: 150px;
+  width: 500px;
+  height: 500px;
+}
+.step {
+  position: absolute;
+  background-color: red;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+}
+#step1 {
+  left: 350px;
+  top: 20px;
+}
+#step2 {
+  left: 420px;
+  top: 300px;
+}
+#step3 {
+  left: 200px;
+  top: 450px;
+}
+#step4 {
+  left: -20px;
+  top: 300px;
+}
+#step5 {
+  left: 50px;
+  top: 20px;
+}
+.step_name {
+  position: absolute;
+  background-color: gray;
+  width: 150px;
+  height: 60px;
+}
+#step1_name {
+  left: 450px;
+  top: 40px;
+}
+#step2_name {
+  left: 520px;
+  top: 320px;
+}
+#step3_name {
+  left: 300px;
+  top: 470px;
+}
+#step4_name {
+  left: -170px;
+  top: 320px;
+}
+#step5_name {
+  left: -100px;
+  top: 40px;
+}
+#step_show {
+  left: 50px;
+  top: 50px;
+}
+#step_name_show {
+  left: 150px;
+  top: 70px;
+}
+#step_content {
+  position: absolute;
+  background-color: blue;
+  width: 600px;
+  height: 300px;
+  left: 50px;
+  top: 170px;
+}
+
+/*Conocedor*/
+#health_conocedor {
+  position: absolute;
+  background-color: white;
+  width: 700px;
+  height: 100px;
+  left: 10px;
+  top: 10px;
+}
+.attempt {
+  float: left;
+  background-color: blue;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+#content_conocedor {
+  position: absolute;
+  background-color: white;
+  width: 1000px;
+  height: 600px;
+  left: 100px;
+  top: 150px;
+}
+#name_area {
+  background-color: gray;
+  width: 100%;
+  height: 400px;
+}
+.item_conocedor {
+  float: left;
+  background-color: green;
+  width: 230px;
+  height: 380px;
+  margin: 10px;
+  text-align: center;
+}
+.drop {
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  margin: 15px;
+}
+.item_name {
+  background-color: gray;
+  width: 200px;
+  height: 30px;
+  margin: 0px 15px 0px 15px;
+}
+.item_detail {
+  background-color: white;
+  width: 200px;
+  height: 100px;
+  margin: 0px 15px 0px 15px;
+}
+#answ_area {
+  background-color: black;
+  width: 100%;
+  height: 200px;
+}
+.drag {
+  float: left;
+  background-color: orange;
+  width: 180px;
+  height: 180px;
+  margin: 10px 35px 10px 35px;
+}

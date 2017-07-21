@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Emprende</title>
+
+    <link rel="stylesheet" media="not screen and (device-width: 1200px) and (device-height: 900px)" href="lib/sugar-web/graphics/css/sugar-96dpi.css">
+    <link rel="stylesheet" media="screen and (device-width: 1200px) and (device-height: 900px)" href="lib/sugar-web/graphics/css/sugar-200dpi.css">
+    <link rel="stylesheet" href="css/activity.css">
+    
+    <script data-main="js/loader" src="lib/require.js"></script>
+  </head>
+  <body>
+
+    <div id="main-toolbar" class="toolbar">
+      <button class="toolbutton" id="activity-button" title="Tota La Tortuga"></button>
+      <button class="toolbutton pull-right" id="stop-button" title="Salir"></button>
+    </div>
+
+    <div id="canvas">
+
+      <div id='opening'>
+        <button id='play'>Empezar</button>
+      </div>
+
+      <div id="menu_custom" class="hidden">
+        <div id="content_character">
+          <button id="character_male" class="character" value="1">Niño</button>
+          <button id="character_female" class="character" value="0">Niña</button>
+        </div>
+        <div id="content_name" class="hidden">
+          <div id="character_selected"></div>
+          <input type="text" id="txt_name" name="txt_name">
+        </div>
+        <button class="back_opening">Regresar a Inicio</button>
+        <button id="to_menu" class="hidden">Ir a menu</button>
+      </div>
+
+      <div id='menu' class="hidden">
+        <div id="welcome_name"></div>
+        <button class='back_opening'>Regresar a Inicio</button>
+        <button id='to_explorar'>Explorar</button>
+        <button id='to_jugar'>Jugar</button>
+        <button id='help_menu' class="help">Ayuda</button>
+      </div>
+
+      <div id='menu_explorar' class="hidden">
+        <button class='back_menu'>Regresar a Menu</button>
+        <button id='to_emprendedores'>Grandes Emprendedores</button>
+        <button id='to_tips'>Tips de un buen emprendedor</button>
+        <button id='to_pasos'>Pasos para crear un proyecto</button>
+      </div>
+
+      <div id='emprendedores' class="hidden">
+        <button class='back_menu_explorar'>Regresar a Menu Explorar</button>
+        <button id='next_emprendedores'>Siguiente</button>
+        <div id="img_emprendedores"></div>
+        <div id="content_emprendedores">
+          <div id="name_emprendedores"></div>
+          <div id="history_emprendedores"></div>
+        </div>
+      </div>
+      <div id='tips' class="hidden">
+        <button class='back_menu_explorar'>Regresar a Menu Explorar</button>
+        <button id='next_tips'>Siguiente</button>
+        <div id="img_tips"></div>
+        <div id="content_tips">
+          <div id="sentence_tips"></div>
+          <div id="detail_tips"></div>
+        </div>
+      </div>
+      <div id='pasos' class="hidden">
+        <button class='back_menu_explorar'>Regresar a Menu Explorar</button>
+        <div id="content_pasos">
+          <button id="step1" class="step" value="siente"></button>
+          <button id="step2" class="step" value="piensa"></button>
+          <button id="step3" class="step" value="crea"></button>
+          <button id="step4" class="step" value="comparte"></button>
+          <button id="step5" class="step" value="reflexiona"></button>
+          <div id="step1_name" class="step_name hidden"></div>
+          <div id="step2_name" class="step_name hidden"></div>
+          <div id="step3_name" class="step_name hidden"></div>
+          <div id="step4_name" class="step_name hidden"></div>
+          <div id="step5_name" class="step_name hidden"></div>
+        </div>
+      </div>
+
+      <div id='menu_jugar' class="hidden">
+        <button class='back_menu'>Regresar a Menu</button>
+        <button id='to_conocedor'>Conocedor</button>
+        <button id='to_pensador'>Pensador</button>
+        <button id='to_emprendedor'>Emprendedor</button>
+      </div>
+
+      <div id='conocedor' class="hidden">
+        <button class='back_menu_jugar'>Regresar a Menu Jugar</button>
+        <button id='help_conocedor' class="help">Ayuda</button>
+        <button id='check_conocedor' class="help">Comprobar</button>
+        <div id="health_conocedor">
+          <div id="attempt1" class="attempt"></div>
+          <div id="attempt2" class="attempt"></div>
+          <div id="attempt3" class="attempt"></div>
+          <div id="attempt4" class="attempt"></div>
+          <div id="attempt5" class="attempt"></div>
+        </div>
+        <div id="content_conocedor">
+          <div id="name_area">
+            <div class="item_conocedor">
+              <div id="drop1" class="drop"></div>
+              <div id="item_name1" class="item_name"></div>
+              <div id="item_detail1" class="item_detail"></div>
+            </div>
+            <div class="item_conocedor">
+              <div id="drop2" class="drop"></div>
+              <div id="item_name2" class="item_name"></div>
+              <div id="item_detail2" class="item_detail"></div>
+            </div>
+            <div class="item_conocedor">
+              <div id="drop3" class="drop"></div>
+              <div id="item_name3" class="item_name"></div>
+              <div id="item_detail3" class="item_detail"></div>
+            </div>
+            <div class="item_conocedor">
+              <div id="drop4" class="drop"></div>
+              <div id="item_name4" class="item_name"></div>
+              <div id="item_detail4" class="item_detail"></div>
+            </div>
+          </div>
+          <div id="answ_area">
+            <div id="drag1" class="drag"></div>
+            <div id="drag2" class="drag"></div>
+            <div id="drag3" class="drag"></div>
+            <div id="drag4" class="drag"></div>
+          </div>
+        </div>
+      </div>
+      <div id='pensador' class="hidden">
+        <button class='back_menu_jugar'>Regresar a Menu Jugar</button>
+      </div>
+      <div id='emprendedor' class="hidden">
+        <button class='back_menu_jugar'>Regresar a Menu Jugar</button>
+      </div>
+
+      
+      <div id="modal" class="hidden"></div>
+      <div id="modal_content" class="hidden">
+        <button id="close_modal" class="close_modal"></button>
+        <!--<button id="play-help" class="hidden"></button>-->
+      </div>
+      <div id="modal_content_step" class="hidden">
+        <button id="close_modal_step" class="close_modal"></button>
+        <div id="step_show" class="step"></div>
+        <div id="step_name_show" class="step_name"></div>
+        <div id="step_content"></div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
