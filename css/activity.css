@@ -335,4 +335,22 @@
   width: 180px;
   height: 180px;
   margin: 10px 35px 10px 35px;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+  transition: background-color 0.3s;
+}
+
+.drop-active {
+  border-color: #FFD700;
+}
+.drop-target { 
+  background-color: black;
+  border-color: white;
+  border-style: solid;
+}
+.drag-drop.can-drop {
+  color: white;
+  background-color: #008080;
+  border-color: white;
 }
