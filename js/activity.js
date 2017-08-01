@@ -14,6 +14,8 @@ define(function (require) {
     var gender = null;
     var name = null;
     var healthC = null;
+    var respC = null;
+    var respCAux = null;
 
     //matrices de juego
     var matrixE = null;
@@ -88,8 +90,7 @@ define(function (require) {
     function initConocedor(){
       matrixC = matrixJugar(1);
       healthC = 5;
-      matrixGameC = [];
-      $('#answ_area').empty();
+      $('#health_conocedor').empty();
       for (var i = 1; i <= healthC ; i++) {
         $('#health_conocedor').append('<div id="attempt'+i+'" class="attempt">'+i+'</div>');
       }
@@ -101,6 +102,8 @@ define(function (require) {
         $('.back_menu_jugar').click();
         return;
       }
+      $('#answ_area').empty();
+      matrixGameC = [];
       var matrixAux = [];
       for (var i = 0; i < 4; i++) {
         var pos = Math.floor(Math.random()*matrixC.length);
@@ -110,13 +113,17 @@ define(function (require) {
         //
         $('#item_name'+(i+1)).html(matrixGameC[i].name);
         $('#item_detail'+(i+1)).html(matrixGameC[i].detail);
+        $('#drop'+(i+1)).attr('value', matrixGameC[i].id);
       }
       for (var i = 0; i < 4; i++) {
         var pos = Math.floor(Math.random()*matrixAux.length);
-        $('#answ_area').append('<div id="drag'+(i+1)+'" class="drag"></div>');
+        $('#answ_area').append('<div id="dragzone'+(i+1)+'" class="dragzone"><div id="drag'+(i+1)+'" class="drag"></div></div>');
         $('#drag'+(i+1)).css('background-image', 'url('+matrixAux[pos].img+')');
+        $('#drag'+(i+1)).attr('value', matrixAux[pos].id);
         matrixAux.splice(pos,1);
       }
+      respC = [];
+      respCAux = null;
     }
 
     require(['domReady!'], function (doc) {
@@ -244,6 +251,32 @@ define(function (require) {
         $('#'+$(this).attr('id')+'_name').animate({width:'toggle'},350);
       });
 
+      $('#check_conocedor').on('click', function(){
+        var iHealthC = healthC;
+        if (respC.length != 4) {
+          alert('ubica todas las posibles respuestas primero!');
+          return;
+        }
+        $.each(respC, function(index, item){
+          if (item.drop != item.drag) {
+            $('#attempt'+healthC).remove();
+            healthC--;
+            if (healthC == 0) {
+              alert('Se han agotado los intentos!');
+              $('.back_menu_jugar').click();
+              return false;
+            }else{
+              alert('Te has equivocado!');
+              return false;
+            }
+          }
+        });
+        if (iHealthC == healthC) {
+          alert('Lo has hecho bien!');
+          gameC();
+        }
+      });
+
       //button functions for modal
       $('#close_modal').on('click', function(){
         $('#modal').addClass('hidden');
@@ -284,6 +317,7 @@ define(function (require) {
         $('#modal_content').removeClass('hidden');
       });
 
+
       //Interact elements
       interact('.drop').dropzone({
         accept: '.drag',
@@ -303,35 +337,7 @@ define(function (require) {
           event.relatedTarget.classList.remove('can-drop');
         },
         ondrop: function (event) {
-          //dropzone para la primera respuesta
-          /*if (event.target.id == 'dropzone1' && dropResp1 != null && event.relatedTarget.id != dropResp1) {
-            var id = $('#'+dropResp1).parent()[0].id;
-            $('#'+id).empty();
-            var pos = dropResp1.substr(4,1);
-            $('#'+id).append('<div id="'+dropResp1+'" class="draggable drag-drop" data="'+(gameAt.matrix[pos-1])+'">'+(gameAt.matrix[pos-1])+'</div>');
-            dropResp1 = null; 
-          }
-          if (event.target.id == 'dropzone1'){
-            dropResp1 = event.relatedTarget.id;
-            if (dropResp2 == event.relatedTarget.id)
-              dropResp2 = null;
-          }
-
-          //dropzone para la segunda respuesta
-          if (event.target.id == 'dropzone2' && dropResp2 != null && event.relatedTarget.id != dropResp2) {
-            var id = $('#'+dropResp2).parent()[0].id;
-            $('#'+id).empty();
-            var pos = dropResp2.substr(4,1);
-            $('#'+id).append('<div id="'+dropResp2+'" class="draggable drag-drop" data="'+(gameAt.matrix[pos-1])+'">'+(gameAt.matrix[pos-1])+'</div>');
-            dropResp2 = null; 
-          }
-          if (event.target.id == 'dropzone2'){
-            dropResp2 = event.relatedTarget.id;
-            if (dropResp1 == event.relatedTarget.id)
-              dropResp21 = null;
-          }
-
-          updateMatrix();*/
+          respCAux = $('#'+event.target.id).attr('value');
         },
         ondropdeactivate: function (event) {
           // remove active dropzone feedback
@@ -345,22 +351,66 @@ define(function (require) {
         autoScroll: true,
         onmove: dragMoveListener,
         onend: function (event) {
-          /*var bool = false;
-          $(event.target.classList).each(function(index, item){
-            if (item == 'can-drop') {
-              bool = true;
+          var iId = event.target.id;
+          var iVal = $('#'+event.target.id).attr('value');
+          var iURL = $('#'+event.target.id).css('background-image');
+
+          if (respCAux == null) {
+            $.each(respC, function(index, item){
+              if (item.drag == iVal) {
+                respC.splice(index, 1);
+              }
+            });
+            var iParent = $('#'+event.target.id).parent().get(0);
+            $(iParent).empty();
+            $(iParent).append('<div id="'+iId+'" class="drag"></div>');
+            $('#'+iId).css('background-image', iURL);
+            $('#'+iId).attr('value', iVal);
+          }else{
+            var found = false;
+            $.each(respC, function(index, item){
+              if (item.drag == iVal) {
+                respC.splice(index, 1);
+                if (item.drop != respCAux){
+                  $.each(respC, function(index, item){
+                    if (item.drop == respCAux) {
+                      var iChild = $('.drag[value='+item.drag+']').get(0);
+                      var iId = $(iChild).attr('id');
+                      var iVal = $(iChild).attr('value');
+                      var iURL = $(iChild).css('background-image');
+                      var iParent = $(iChild).parent().get(0);
+                      $(iParent).empty();
+                      $(iParent).append('<div id="'+iId+'" class="drag"></div>');
+                      $('#'+iId).css('background-image', iURL);
+                      $('#'+iId).attr('value', iVal);
+
+                      respC.splice(index, 1);
+                    }
+                  });
+                }
+                found = true;
+              }
+            });
+            if (found == false) {
+              $.each(respC, function(index, item){
+                if (item.drop == respCAux) {
+                  var iChild = $('.drag[value='+item.drag+']').get(0);
+                  var iId = $(iChild).attr('id');
+                  var iVal = $(iChild).attr('value');
+                  var iURL = $(iChild).css('background-image');
+                  var iParent = $(iChild).parent().get(0);
+                  $(iParent).empty();
+                  $(iParent).append('<div id="'+iId+'" class="drag"></div>');
+                  $('#'+iId).css('background-image', iURL);
+                  $('#'+iId).attr('value', iVal);
+
+                  respC.splice(index, 1);
+                }
+              });
             }
-          });
-          if(bool == false){
-            if (dropResp1 == event.target.id) {
-              dropResp1 = null;
-            }
-            if (dropResp2 == event.target.id) {
-              dropResp2 = null;
-            }
+            respC.push({"drop":respCAux, "drag":iVal});
+            respCAux = null;
           }
-          
-          validateDrag();*/
         }
       });
       window.dragMoveListener = dragMoveListener;

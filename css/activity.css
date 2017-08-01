@@ -329,6 +329,12 @@
   width: 100%;
   height: 200px;
 }
+.dragzone {
+  float: left;
+  width: 250px;
+  height: 220px;
+  margin: 0px;
+}
 .drag {
   float: left;
   background-color: orange;

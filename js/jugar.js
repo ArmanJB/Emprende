@@ -3,14 +3,14 @@
 function matrixJugar(nivel){
 	if (nivel == 1) {//Conocedor
 		return [
-			{"name":"El Nombre1", "detail":"El detalle1", "img":"img/conocedor/img1.png"},
-			{"name":"El Nombre2", "detail":"El detalle2", "img":"img/conocedor/img2.png"},
-			{"name":"El Nombre3", "detail":"El detalle3", "img":"img/conocedor/img3.png"},
-			{"name":"El Nombre4", "detail":"El detalle4", "img":"img/conocedor/img4.png"},
-			{"name":"El Nombre5", "detail":"El detalle5", "img":"img/conocedor/img5.png"},
-			{"name":"El Nombre6", "detail":"El detalle6", "img":"img/conocedor/img6.png"},
-			{"name":"El Nombre7", "detail":"El detalle7", "img":"img/conocedor/img7.png"},
-			{"name":"El Nombre8", "detail":"El detalle8", "img":"img/conocedor/img8.png"},
+			{"name":"El Nombre1", "detail":"El detalle1", "img":"img/conocedor/img1.png", "id":"1"},
+			{"name":"El Nombre2", "detail":"El detalle2", "img":"img/conocedor/img2.png", "id":"2"},
+			{"name":"El Nombre3", "detail":"El detalle3", "img":"img/conocedor/img3.png", "id":"3"},
+			{"name":"El Nombre4", "detail":"El detalle4", "img":"img/conocedor/img4.png", "id":"4"},
+			{"name":"El Nombre5", "detail":"El detalle5", "img":"img/conocedor/img5.png", "id":"5"},
+			{"name":"El Nombre6", "detail":"El detalle6", "img":"img/conocedor/img6.png", "id":"6"},
+			{"name":"El Nombre7", "detail":"El detalle7", "img":"img/conocedor/img7.png", "id":"7"},
+			{"name":"El Nombre8", "detail":"El detalle8", "img":"img/conocedor/img8.png", "id":"8"},
 
 		];
 	}
