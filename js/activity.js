@@ -18,6 +18,7 @@ define(function (require) {
     var respCAux = null;
     var healthP = null;
     var respP = null;
+    var respE = null;
 
     //matrices de juego
     var matrixE = null;
@@ -162,6 +163,22 @@ define(function (require) {
       respP = [null, null, null];
     }
 
+    //Emprendedor
+    function initEmprendedor(){
+      $('#item_emprendedor1').removeClass('hidden');
+      $('#item_emprendedor2').removeClass('hidden');
+      $('#item_emprendedor3').addClass('hidden');
+      $('#item_emprendedor4').addClass('hidden');
+      $('#item_emprendedor5').addClass('hidden');
+      matrixP = matrixExplorar(3);
+      matrixP.forEach(function(item, index){
+        $('#item_img'+(index+1)).css('background-image', 'url('+item.img+')');
+        $('#item_step_name'+(index+1)).html(item.step.toUpperCase());
+        $('#item_txt'+(index+1)).val('');
+      });
+      respE = 1;
+    }
+
     require(['domReady!'], function (doc) {
       activity.setup();
 
@@ -258,6 +275,8 @@ define(function (require) {
       $('#to_emprendedor').on('click', function(){
         $('#menu_jugar').toggle();
         $('#emprendedor').toggle();
+        //
+        initEmprendedor();
       });
 
       $('.back_menu_jugar').on('click', function(){
@@ -315,7 +334,6 @@ define(function (require) {
         }
       });
 
-
       $('.item_answ').on('click', function(){
         var iId = $(this).attr('id');
         var iItem = iId.substring((iId.length-1), iId.length);
@@ -366,6 +384,22 @@ define(function (require) {
         }
       });
 
+      $('#check_emprendedor').on('click', function(){
+        if (respE == 1) {
+          $('#item_emprendedor1').addClass('hidden');
+          $('#item_emprendedor2').addClass('hidden');
+          $('#item_emprendedor3').removeClass('hidden');
+        }else if (respE == 2) {
+          $('#item_emprendedor3').addClass('hidden');
+          $('#item_emprendedor4').removeClass('hidden');
+          $('#item_emprendedor5').removeClass('hidden');
+        }else if (respE == 3) {
+          alert('Lo has hecho bien!');
+          $('.back_menu_jugar').click();
+        }
+        respE++;
+      });
+
 
       //button functions for modal
       $('#close_modal').on('click', function(){
@@ -411,6 +445,12 @@ define(function (require) {
         $('#modal').removeClass('hidden');
         $('#modal_content').removeClass('hidden');
       });
+
+      $('#help_emprendedor').on('click', function(){
+        $('#modal').removeClass('hidden');
+        $('#modal_content').removeClass('hidden');
+      });
+
 
 
       //Interact elements
