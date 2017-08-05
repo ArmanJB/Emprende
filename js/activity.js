@@ -16,6 +16,8 @@ define(function (require) {
     var healthC = null;
     var respC = null;
     var respCAux = null;
+    var healthP = null;
+    var respP = null;
 
     //matrices de juego
     var matrixE = null;
@@ -23,6 +25,8 @@ define(function (require) {
     var matrixP = null;
     var matrixC = null;
     var matrixGameC = null;
+    var matrixPe = null;
+    var matrixGameP = null;
 
     //funcion drag
     function dragMoveListener (event) {
@@ -126,6 +130,38 @@ define(function (require) {
       respCAux = null;
     }
 
+    //Pensador
+    function initPensador(){
+      matrixPe = matrixJugar(3);
+      healthP = 5;
+      $('#health_pensador').empty();
+      for (var i = 1; i <= healthP ; i++) {
+        $('#health_pensador').append('<div id="attemptP'+i+'" class="attempt">'+i+'</div>');
+      }
+      gameP();
+    }
+
+    function gameP(){
+      if (matrixPe.length == 0) {
+        $('.back_menu_jugar').click();
+        return;
+      }
+      $('#answ_area').empty();
+      matrixGameP = [];
+      for (var i = 0; i < 3; i++) {
+        var pos = Math.floor(Math.random()*matrixPe.length);
+        matrixGameP.push(matrixPe[pos]);
+        matrixPe.splice(pos,1);
+        //
+        $('#item_sentence'+(i+1)).html(matrixGameP[i].sentence);
+        $('#item_answ_true'+(i+1)).removeClass('item_answ_true');
+        $('#item_answ_true'+(i+1)).addClass('item_answ_disable');
+        $('#item_answ_false'+(i+1)).removeClass('item_answ_false');
+        $('#item_answ_true'+(i+1)).addClass('item_answ_disable');
+      }
+      respP = [null, null, null];
+    }
+
     require(['domReady!'], function (doc) {
       activity.setup();
 
@@ -146,7 +182,7 @@ define(function (require) {
       });
 
       $('#to_menu').on('click', function(){
-        if ($('#txt_name').val().length < 4) {
+        if ($('#txt_name').val().length < 3) {
           alert('nombre corto');
           return;
         }
@@ -215,6 +251,8 @@ define(function (require) {
       $('#to_pensador').on('click', function(){
         $('#menu_jugar').toggle();
         $('#pensador').toggle();
+        //
+        initPensador();
       });
 
       $('#to_emprendedor').on('click', function(){
@@ -277,6 +315,58 @@ define(function (require) {
         }
       });
 
+
+      $('.item_answ').on('click', function(){
+        var iId = $(this).attr('id');
+        var iItem = iId.substring((iId.length-1), iId.length);
+        if ($(this).attr('value') == 'true') {
+          $('#'+iId).removeClass('item_answ_disable');
+          $('#'+iId).addClass('item_answ_true');
+          $('#item_answ_false'+iItem).removeClass('item_answ_false');
+          $('#item_answ_false'+iItem).addClass('item_answ_disable');
+          respP[iItem-1] = 1;
+        }else{
+          $('#'+iId).removeClass('item_answ_disable');
+          $('#'+iId).addClass('item_answ_false');
+          $('#item_answ_true'+iItem).removeClass('item_answ_true');
+          $('#item_answ_true'+iItem).addClass('item_answ_disable');
+          respP[iItem-1] = 0;
+        }
+      });
+
+      $('#check_pensador').on('click', function(){
+        var found = true;
+        $.each(respP, function(index, item){
+          if (item == null) {
+            alert('ubica todas las posibles respuestas primero!');
+            found = false;
+            return false;
+          }
+        });
+        if (found == false) return;
+
+        var iHealthP = healthP;
+        $.each(respP, function(index, item){
+          if (item != matrixGameP[index].answ) {
+            $('#attemptP'+healthP).remove();
+            healthP--;
+            if (healthP == 0) {
+              alert('Se han agotado los intentos!');
+              $('.back_menu_jugar').click();
+              return false;
+            }else{
+              alert('Te has equivocado!');
+              return false;
+            }
+          }
+        });
+        if (iHealthP == healthP) {
+          alert('Lo has hecho bien!');
+          gameP();
+        }
+      });
+
+
       //button functions for modal
       $('#close_modal').on('click', function(){
         $('#modal').addClass('hidden');
@@ -313,6 +403,11 @@ define(function (require) {
       });
 
       $('#help_conocedor').on('click', function(){
+        $('#modal').removeClass('hidden');
+        $('#modal_content').removeClass('hidden');
+      });
+
+      $('#help_pensador').on('click', function(){
         $('#modal').removeClass('hidden');
         $('#modal_content').removeClass('hidden');
       });

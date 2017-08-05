@@ -270,7 +270,7 @@
 }
 
 /*Conocedor*/
-#health_conocedor {
+.health_area {
   position: absolute;
   background-color: white;
   width: 700px;
@@ -359,4 +359,42 @@
   color: white;
   background-color: #008080;
   border-color: white;
+}
+
+/*Pensador*/
+#content_pensador {
+  position: absolute;
+  background-color: white;
+  width: 1000px;
+  height: 500px;
+  left: 100px;
+  top: 200px;
+}
+.item_pensador {
+  background-color: green;
+  width: 950px;
+  height: 150px;
+  margin: 8px;
+}
+.item_sentence {
+  float: left;
+  background-color: yellow;
+  width: 700px;
+  height: 100px;
+  margin: 20px 0px 20px 10px;
+}
+.item_answ{
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 20px 10px 20px 10px;
+}
+.item_answ_true {
+  background-color: lime;
+}
+.item_answ_false {
+  background-color: red;
+}
+.item_answ_disable {
+  background-color: gray;
 }
