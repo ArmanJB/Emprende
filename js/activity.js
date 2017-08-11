@@ -400,6 +400,20 @@ define(function (require) {
         respE++;
       });
 
+      $('#character_male').hover(function(){
+        $('#character_male_img').css('background-image', 'url("img/characterMale_hover.png")');
+      });
+      $('#character_male').mouseleave(function(){
+        $('#character_male_img').css('background-image', 'url("img/characterMale.png")');
+      });
+
+      $('#character_female').hover(function(){
+        $('#character_female_img').css('background-image', 'url("img/characterFemale_hover.png")');
+      });
+      $('#character_female').mouseleave(function(){
+        $('#character_female_img').css('background-image', 'url("img/characterFemale.png")');
+      });
+
 
       //button functions for modal
       $('#close_modal').on('click', function(){
