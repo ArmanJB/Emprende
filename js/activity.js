@@ -208,10 +208,15 @@ define(function (require) {
         $('#menu_custom').toggle();
         $('#menu').toggle();
         $('#help_menu').click();
-        if (gender == 0)
-          $('#welcome_name').html('Bienvenida '+name+', anímate a emprender.')
-        else
-          $('#welcome_name').html('Bienvenido '+name+', anímate a emprender.')
+        if (gender == 0){
+          $('.welcome_name').html('Bienvenida '+name+',<br> anímate a emprender.');
+          $('.character_selected_U').css('background-image', 'url(img/character_selected_UF.png)');
+          $('#character_selected').css('background-image', 'url(img/character_selected_F.png)');
+        }else{
+          $('.welcome_name').html('Bienvenido '+name+',<br> anímate a emprender.');
+          $('.character_selected_U').css('background-image', 'url(img/character_selected_UM.png)');
+          $('#character_selected').css('background-image', 'url(img/character_selected_M.png)');
+        }
       });
 
       $('#to_explorar').on('click', function(){

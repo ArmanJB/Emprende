@@ -516,9 +516,9 @@
 #character_female:hover {
   background-image: url(../img/buttons/character_female_hover.png);
 }
-#character_selected {
+#character_name {
   float: left;
-  background-image: url(../img/character_selected.png);
+  background-image: url(../img/character_name.png);
   background-color: transparent;
   width: 640px;
   height: 460px;
@@ -552,4 +552,207 @@ input#txt_name[type='text'] {
 }
 #to_menu:hover {
   background-image: url(../img/buttons/to_menu_hover.png);
+}
+.help {
+  position: absolute;
+  background-image: url(../img/buttons/help.png);
+  background-color: transparent;
+  width: 113px;
+  height: 113px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  right: 10px;
+  top: 10px;
+}
+.help:hover {
+  background-image: url(../img/buttons/help_hover.png);
+}
+#help_menu {
+  background-color: transparent;
+}
+#to_explorar {
+  position: absolute;
+  background-image: url(../img/buttons/to_explorar.png);
+  background-color: transparent;
+  width: 360px;
+  height: 85px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 330px;
+  top: 450px;
+}
+#to_explorar:hover {
+  background-image: url(../img/buttons/to_explorar_hover.png);
+}
+#to_jugar {
+  position: absolute;
+  background-image: url(../img/buttons/to_jugar.png);
+  background-color: transparent;
+  width: 360px;
+  height: 85px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 330px;
+  top: 580px;
+}
+#to_jugar:hover {
+  background-image: url(../img/buttons/to_jugar_hover.png);
+}
+.welcome_name {
+  position: absolute;
+  background-color: transparent;
+  color: white;
+  width: 300px;
+  height: 70px;
+  padding: 0px;
+  left: 150px;
+  top: 60px;
+  font-size: 30px;
+}
+.character_selected_U {
+  position: absolute;
+  /*background-image: url(../img/character_selected_UM.png);*/
+  background-color: transparent;
+  width: 120px;
+  height: 85px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 20px;
+  top: 50px;
+}
+#character_selected {
+  position: absolute;
+  /*background-image: url(../img/character_selected_M.png);*/
+  background-color: transparent;
+  width: 130px;
+  height: 220px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  right: 70px;
+  top: 470px;
+}
+#back_opening_menu, .back_menu {
+  position: absolute;
+  background-image: url(../img/buttons/back_opening.png);
+  background-color: transparent;
+  width: 260px;
+  height: 130px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 15px;
+  bottom: 30px;
+}
+#back_opening_menu:hover, .back_menu:hover {
+  background-image: url(../img/buttons/back_opening_hover.png);
+}
+#back_opening_custom {
+  position: absolute;
+  background-image: url(../img/buttons/back_opening_custom.png);
+  background-color: transparent;
+  width: 255px;
+  height: 80px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 15px;
+  top: 30px;
+}
+#back_opening_custom:hover {
+  background-image: url(../img/buttons/back_opening_custom_hover.png);
+}
+#to_emprendedores {
+  position: absolute;
+  background-image: url(../img/buttons/to_emprendedores.png);
+  background-color: transparent;
+  width: 770px;
+  height: 70px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 310px;
+  top: 430px;
+}
+#to_emprendedores:hover {
+  background-image: url(../img/buttons/to_emprendedores_hover.png);
+}
+#to_tips {
+  position: absolute;
+  background-image: url(../img/buttons/to_tips.png);
+  background-color: transparent;
+  width: 770px;
+  height: 70px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 310px;
+  top: 520px;
+}
+#to_tips:hover {
+  background-image: url(../img/buttons/to_tips_hover.png);
+}
+#to_pasos {
+  position: absolute;
+  background-image: url(../img/buttons/to_pasos.png);
+  background-color: transparent;
+  width: 770px;
+  height: 70px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 310px;
+  top: 610px;
+}
+#to_pasos:hover {
+  background-image: url(../img/buttons/to_pasos_hover.png);
+}
+#to_conocedor {
+  position: absolute;
+  background-image: url(../img/buttons/to_conocedor.png);
+  background-color: transparent;
+  width: 400px;
+  height: 70px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 500px;
+  top: 430px;
+}
+#to_conocedor:hover {
+  background-image: url(../img/buttons/to_conocedor_hover.png);
+}
+#to_pensador {
+  position: absolute;
+  background-image: url(../img/buttons/to_pensador.png);
+  background-color: transparent;
+  width: 400px;
+  height: 70px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 500px;
+  top: 520px;
+}
+#to_pensador:hover {
+  background-image: url(../img/buttons/to_pensador_hover.png);
+}
+#to_emprendedor {
+  position: absolute;
+  background-image: url(../img/buttons/to_emprendedor.png);
+  background-color: transparent;
+  width: 400px;
+  height: 70px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 500px;
+  top: 610px;
+}
+#to_emprendedor:hover {
+  background-image: url(../img/buttons/to_emprendedor_hover.png);
 }
