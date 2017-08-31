@@ -91,7 +91,7 @@
 #modal_content {
   z-index: 999;
   position: absolute;
-  border: 8px solid #2E9AFE;
+  border: 8px solid #18203B;
   border-radius: 40px;
 
   background-color: white;
@@ -124,8 +124,8 @@
   padding: 0px;
   border: none;
   border-radius: 30px;
-  right: 5px;
-  top: 5px;
+  right: 33px;
+  top: 33px;
 }
 .close_modal:hover {
   background-image: url(../img/close-modal-hover.png);
@@ -135,31 +135,35 @@
 #img_emprendedores {
   position: absolute;
   background-color: black;
-  left: 100px;
-  top: 200px;
+  left: 247px;
+  top: 205px;
   width: 250px;
   height: 300px;
 }
 #content_emprendedores {
   position: absolute;
-  background-color: white;
-  left: 450px;
-  top: 100px;
-  width: 650px;
-  height: 550px;
+  left: 530px;
+  top: 175px;
+  width: 450px;
+  height: 370px;
 }
 #name_emprendedores {
   position: absolute;
-  background-color: gray;
-  width: 100%;
-  height: 70px;
+  margin: 10px 20px 0px 40px;
+  width: 380px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 15px;
 }
 #history_emprendedores {
   position: absolute;
-  background-color: gray;
   top: 100px;
   width: 100%;
-  height: 450px;
+  height: 270px;
+  text-align: center;
+  font-size: 25px;
 }
 
 /*Tips*/
@@ -196,7 +200,6 @@
 /*Pasos*/
 #content_pasos {
   position: absolute;
-  background-color: white;
   border-radius: 250px;
   left: 350px;
   top: 150px;
@@ -205,56 +208,72 @@
 }
 .step {
   position: absolute;
-  background-color: red;
+  background-color: transparent;
+  border: none;
   border-radius: 50px;
   width: 100px;
   height: 100px;
 }
 #step1 {
-  left: 350px;
+  left: 345px;
   top: 20px;
 }
 #step2 {
-  left: 420px;
-  top: 300px;
+  left: 438px;/*420*/
+  top: 297px;/*300*/
 }
 #step3 {
   left: 200px;
-  top: 450px;
+  top: 473px;
 }
 #step4 {
-  left: -20px;
+  left: -39px;
   top: 300px;
 }
 #step5 {
-  left: 50px;
+  left: 55px;
   top: 20px;
 }
 .step_name {
   position: absolute;
-  background-color: gray;
-  width: 150px;
-  height: 60px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 25px;
+  width: 260px;
+  height: 50px;
 }
 #step1_name {
-  left: 450px;
-  top: 40px;
+  background-image: url(../img/pasos/step1.png);
+  left: 455px;
+  top: 30px;
 }
 #step2_name {
-  left: 520px;
-  top: 320px;
+  background-image: url(../img/pasos/step2.png);
+  left: 550px;
+  top: 310px;
 }
 #step3_name {
-  left: 300px;
-  top: 470px;
+  background-image: url(../img/pasos/step3.png);
+  left: 310px;
+  top: 485px;
 }
 #step4_name {
-  left: -170px;
-  top: 320px;
+  background-image: url(../img/pasos/step4.png);
+  left: -310px;
+  top: 315px;
 }
 #step5_name {
-  left: -100px;
-  top: 40px;
+  background-image: url(../img/pasos/step5.png);
+  left: -215px;
+  top: 30px;
+}
+#step_character {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  left: 475px; 
+  top: 297px;
 }
 #step_show {
   left: 50px;
@@ -755,4 +774,34 @@ input#txt_name[type='text'] {
 }
 #to_emprendedor:hover {
   background-image: url(../img/buttons/to_emprendedor_hover.png);
+}
+.back_menu_explorar {
+  position: absolute;
+  background-image: url(../img/buttons/back_menu_explorar.png);
+  background-color: transparent;
+  width: 200px;
+  height: 50px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  left: 30px;
+  bottom: 40px;
+}
+.back_menu_explorar:hover {
+  background-image: url(../img/buttons/back_menu_explorar_hover.png);
+}
+#next_emprendedores {
+  position: absolute;
+  background-image: url(../img/buttons/next_emprendedores.png);
+  background-color: transparent;
+  width: 200px;
+  height: 50px;
+  padding: 0px;
+  border: none;
+  border-radius: 0px;
+  right: 30px;
+  bottom: 40px;
+}
+#next_emprendedores:hover {
+  background-image: url(../img/buttons/next_emprendedores_hover.png);
 }

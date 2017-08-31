@@ -212,10 +212,12 @@ define(function (require) {
           $('.welcome_name').html('Bienvenida '+name+',<br> anímate a emprender.');
           $('.character_selected_U').css('background-image', 'url(img/character_selected_UF.png)');
           $('#character_selected').css('background-image', 'url(img/character_selected_F.png)');
+          $('#step_character').css('background-image', 'url(img/pasos/step_character_F.png)');
         }else{
           $('.welcome_name').html('Bienvenido '+name+',<br> anímate a emprender.');
           $('.character_selected_U').css('background-image', 'url(img/character_selected_UM.png)');
           $('#character_selected').css('background-image', 'url(img/character_selected_M.png)');
+          $('#step_character').css('background-image', 'url(img/pasos/step_character_M.png)');
         }
       });
 
@@ -436,7 +438,7 @@ define(function (require) {
       $('#help_menu').on('click', function(){
         //$('#modal_content').addClass('modal_content_menu');
         //$('#modal-content').removeClass('modal_content_game');
-        //$('#modal-content').css('background-image', 'url(img/help-menu.png)');
+        $('#modal_content').css('background-image', 'url(img/help/help_menu.png)');
         $('#modal').removeClass('hidden');
         $('#modal_content').removeClass('hidden');
       });
