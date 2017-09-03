@@ -395,41 +395,58 @@
 /*Pensador*/
 #content_pensador {
   position: absolute;
-  background-color: white;
   width: 1000px;
   height: 500px;
   left: 100px;
-  top: 200px;
+  top: 250px;
 }
 .item_pensador {
-  background-color: green;
   width: 950px;
   height: 150px;
   margin: 8px;
 }
 .item_sentence {
   float: left;
-  background-color: yellow;
-  width: 700px;
-  height: 100px;
+  background-image: url(../img/item_sentence.png);
+  width: 690px;
+  height: 90px;
   margin: 20px 0px 20px 10px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
 }
 .item_answ{
   float: left;
   width: 100px;
   height: 100px;
   margin: 20px 10px 20px 10px;
+  background-color: transparent;
+  color: transparent;
+  border: none;
+}
+.item_answ:hover {
+  color: transparent;
+  background-color: transparent;
 }
 .item_answ_true {
-  background-color: lime;
+  background-image: url(../img/buttons/item_answ_true.png);
 }
 .item_answ_false {
-  background-color: red;
+  background-image: url(../img/buttons/item_answ_false.png);
 }
-.item_answ_disable {
-  background-color: gray;
+.item_answ_true_disable {
+  background-image: url(../img/buttons/item_answ_true_disable.png);
 }
-
+.item_answ_false_disable {
+  background-image: url(../img/buttons/item_answ_false_disable.png);
+}
+.item_answ_true_disable:hover {
+  background-image: url(../img/buttons/item_answ_true.png);
+}
+.item_answ_false_disable:hover {
+  background-image: url(../img/buttons/item_answ_false.png);
+}
 /*Emprendedor*/
 #content_emprendedor {
   position: absolute;

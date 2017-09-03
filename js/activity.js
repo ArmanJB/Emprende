@@ -156,9 +156,9 @@ define(function (require) {
         //
         $('#item_sentence'+(i+1)).html(matrixGameP[i].sentence);
         $('#item_answ_true'+(i+1)).removeClass('item_answ_true');
-        $('#item_answ_true'+(i+1)).addClass('item_answ_disable');
+        $('#item_answ_true'+(i+1)).addClass('item_answ_true_disable');
         $('#item_answ_false'+(i+1)).removeClass('item_answ_false');
-        $('#item_answ_true'+(i+1)).addClass('item_answ_disable');
+        $('#item_answ_false'+(i+1)).addClass('item_answ_false_disable');
       }
       respP = [null, null, null];
     }
@@ -345,16 +345,16 @@ define(function (require) {
         var iId = $(this).attr('id');
         var iItem = iId.substring((iId.length-1), iId.length);
         if ($(this).attr('value') == 'true') {
-          $('#'+iId).removeClass('item_answ_disable');
+          $('#'+iId).removeClass('item_answ_true_disable');
           $('#'+iId).addClass('item_answ_true');
           $('#item_answ_false'+iItem).removeClass('item_answ_false');
-          $('#item_answ_false'+iItem).addClass('item_answ_disable');
+          $('#item_answ_false'+iItem).addClass('item_answ_false_disable');
           respP[iItem-1] = 1;
         }else{
-          $('#'+iId).removeClass('item_answ_disable');
+          $('#'+iId).removeClass('item_answ_false_disable');
           $('#'+iId).addClass('item_answ_false');
           $('#item_answ_true'+iItem).removeClass('item_answ_true');
-          $('#item_answ_true'+iItem).addClass('item_answ_disable');
+          $('#item_answ_true'+iItem).addClass('item_answ_true_disable');
           respP[iItem-1] = 0;
         }
       });
