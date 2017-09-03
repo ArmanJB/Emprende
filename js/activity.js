@@ -452,6 +452,7 @@ define(function (require) {
           if (iStep.val() == item.step) {
             $('#step_show').css('background-image', 'url('+item.img+')');
             $('#step_name_show').html(item.step.toUpperCase());
+            $('#step_name_show').css('background-image', 'url(img/pasos/'+iStep.attr('id')+'_show.png)');
             $('#step_content').html(item.detail);
           }
         });
