@@ -5,6 +5,7 @@ define(function (require) {
     var datastore = require("sugar-web/datastore");
     var jquery = require("jquery");
     var interact = require("interact");
+    var swal = require("sweetalert");
 
     //matrices
     var explorar = require("../js/explorar.js");
@@ -175,6 +176,8 @@ define(function (require) {
         $('#item_img'+(index+1)).css('background-image', 'url('+item.img+')');
         $('#item_step_name'+(index+1)).html(item.step.toUpperCase());
         $('#item_txt'+(index+1)).val('');
+
+        $('#item_step_name'+(index+1)).css('background-image', 'url(img/pasos/step'+(index+1)+'_show.png)');
       });
       respE = 1;
     }
@@ -200,7 +203,7 @@ define(function (require) {
 
       $('#to_menu').on('click', function(){
         if ($('#txt_name').val().length < 3) {
-          alert('nombre corto');
+          swal('¡El nombre es muy corto!', '', 'warning');
           return;
         }
         //
@@ -318,7 +321,7 @@ define(function (require) {
       $('#check_conocedor').on('click', function(){
         var iHealthC = healthC;
         if (respC.length != 4) {
-          alert('ubica todas las posibles respuestas primero!');
+          swal('¡Ubica todas las posibles respuestas primero!', '', 'warning');
           return;
         }
         $.each(respC, function(index, item){
@@ -326,17 +329,17 @@ define(function (require) {
             $('#attempt'+healthC).remove();
             healthC--;
             if (healthC == 0) {
-              alert('Se han agotado los intentos!');
+              swal('¡Se han agotado los intentos!', '', 'error');
               $('.back_menu_jugar').click();
               return false;
             }else{
-              alert('Te has equivocado!');
+              swal('¡Te has equivocado!', '', 'error');
               return false;
             }
           }
         });
         if (iHealthC == healthC) {
-          alert('Lo has hecho bien!');
+          swal('¡Buen trabajo!', '', 'success');
           gameC();
         }
       });
@@ -363,7 +366,7 @@ define(function (require) {
         var found = true;
         $.each(respP, function(index, item){
           if (item == null) {
-            alert('ubica todas las posibles respuestas primero!');
+            swal('¡Ubica todas las posibles respuestas primero!', '', 'warning');
             found = false;
             return false;
           }
@@ -376,17 +379,17 @@ define(function (require) {
             $('#attemptP'+healthP).remove();
             healthP--;
             if (healthP == 0) {
-              alert('Se han agotado los intentos!');
+              swal('¡Se han agotado los intentos!', '', 'error');
               $('.back_menu_jugar').click();
               return false;
             }else{
-              alert('Te has equivocado!');
+              swal('¡Te has equivocado!', '', 'error');
               return false;
             }
           }
         });
         if (iHealthP == healthP) {
-          alert('Lo has hecho bien!');
+          swal('¡Buen trabajo!', '', 'success');
           gameP();
         }
       });
@@ -401,7 +404,7 @@ define(function (require) {
           $('#item_emprendedor4').removeClass('hidden');
           $('#item_emprendedor5').removeClass('hidden');
         }else if (respE == 3) {
-          alert('Lo has hecho bien!');
+          swal('¡Buen trabajo!', '', 'success');
           $('.back_menu_jugar').click();
         }
         respE++;

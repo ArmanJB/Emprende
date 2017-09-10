@@ -450,14 +450,12 @@
 /*Emprendedor*/
 #content_emprendedor {
   position: absolute;
-  background-color: white;
   width: 1000px;
   height: 600px;
   left: 100px;
   top: 150px;
 }
 .item_emprendedor {
-  background-color: green;
   width: 950px;
   height: 280px;
   margin: 10px 20px 10px 20px;
@@ -468,18 +466,22 @@
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  margin: 90px 20px 90px 50px;
+  margin: 90px 20px 90px 20px;
 }
 .item_step_name {
   float: left;
-  background-color: lime;
-  width: 150px;
-  height: 60px;
-  margin: 110px 40px 110px 10px;
+  width: 260px;
+  height: 50px;
+  margin: 102px 10px 103px 10px;
+
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 25px;
 }
 .item_txt {
   float: left;
-  width: 550px;
+  width: 510px;
   height: 240px;
   margin: 15px 5px 15px 5px;resize: none;
   resize: none;
@@ -488,10 +490,10 @@
   height: 580px;
 }
 #item_img3 {
-  margin: 240px 20px 240px 50px;
+  margin: 240px 20px 240px 20px;
 }
 #item_step_name3 {
-  margin: 260px 40px 260px 10px;
+  margin: 252px 10px 0px 10px;
 }
 #item_txt3 {
   height: 540px;
