@@ -333,13 +333,13 @@ define(function (require) {
               $('.back_menu_jugar').click();
               return false;
             }else{
-              swal('¡Te has equivocado!', '', 'error');
+              swal('¡Puedes hacerlo mejor, tendrás una nueva oportunidad.!', '', 'error');
               return false;
             }
           }
         });
         if (iHealthC == healthC) {
-          swal('¡Buen trabajo!', '', 'success');
+          swal('¡Muy bien! Has aprendido mucho.', '', 'success');
           gameC();
         }
       });
@@ -383,13 +383,13 @@ define(function (require) {
               $('.back_menu_jugar').click();
               return false;
             }else{
-              swal('¡Te has equivocado!', '', 'error');
+              swal('¡Puedes hacerlo mejor, tendrás una nueva oportunidad.!', '', 'error');
               return false;
             }
           }
         });
         if (iHealthP == healthP) {
-          swal('¡Buen trabajo!', '', 'success');
+          swal('¡Muy bien! Has aprendido mucho. ', '', 'success');
           gameP();
         }
       });
@@ -404,7 +404,7 @@ define(function (require) {
           $('#item_emprendedor4').removeClass('hidden');
           $('#item_emprendedor5').removeClass('hidden');
         }else if (respE == 3) {
-          swal('¡Buen trabajo!', '', 'success');
+          swal('¡Muy bien! Has aprendido mucho. ', '', 'success');
           $('.back_menu_jugar').click();
         }
         respE++;
@@ -462,16 +462,19 @@ define(function (require) {
       });
 
       $('#help_conocedor').on('click', function(){
+        $('#modal_content').css('background-image', 'url(img/help/help_conocedor.png)');
         $('#modal').removeClass('hidden');
         $('#modal_content').removeClass('hidden');
       });
 
       $('#help_pensador').on('click', function(){
+        $('#modal_content').css('background-image', 'url(img/help/help_pensador.png)');
         $('#modal').removeClass('hidden');
         $('#modal_content').removeClass('hidden');
       });
 
       $('#help_emprendedor').on('click', function(){
+        $('#modal_content').css('background-image', 'url(img/help/help_emprendedor.png)');
         $('#modal').removeClass('hidden');
         $('#modal_content').removeClass('hidden');
       });
